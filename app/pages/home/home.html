@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Test EC2E
+    </ion-title>
+    <ion-buttons end>
+      <button (click)="mannageConnection()">
+        {{connectionState}}
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-label>Connected to: {{connectionName}}</ion-label>
+  <ion-input type="text" placeholder="Write/Request" [(ngModel)]="rwMessage">
+  </ion-input>
+  <button (click)="onWriteOrRequest(rwMessage)" [disabled]="disableWriteRequestBtn">Write/Request</button>
+  <button (click)="clearDisplatMsg()" [disabled]="disableClearBtn">Clear Message</button>
+  <ion-list>
+    <ion-item>
+      <div id="deviceMessage"></div>
+    </ion-item>
+  </ion-list>
+</ion-content>
